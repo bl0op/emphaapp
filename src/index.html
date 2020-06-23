@@ -8,5 +8,32 @@
     <title>EmphaApp</title>
 </head>
 <body>
+    <form class='login-form'>
+        <div class='login-form__header'>
+            <h1 class='login-form__app-label'>EmphaApp</h1>
+            <h1 class='login-form__form-label'>Login</h1>
+        </div>
+        <div class='login-form__content'>
+            <label for='username' class='login-form__username-label'><span class='login-form__icon fa fa-user'></span>username</label>
+            <input type='text' name='username' class='login-form__username-input'>
+
+            <label for='password' class='login-form__password-label'><span class='login-form__icon fa fa-key'></span>password</label>
+            <input type='password' name='password' class='login-form__password-input'>
+
+            <div class='login-form__sign-in'>
+                <input type='submit' class='login-form__submit-input btn' placeholder='Sign in'>
+                <input type='checkbox' name='remember-me' class='login-form__checkbox-input checkbox'>
+                <label for='password' for='remember-me' class='login-form__checkbox-label'> Remember me</label>
+            </div>
+                
+            <div class='login-form__sign-up'>
+                <a href='#' class='login-form__sign-up-link link'>sign up</a>
+                <a href='#' class='login-form__forgot-password-link link'>forgot your password?</a>
+            </div>
+        </div>
+    </form>
+    <section class='footer'>
+        by Yaroslav Kalinin ©
+    </section>
 </body>
 </html>
