@@ -3,12 +3,18 @@ const nodeExternals = require('webpack-node-externals');
 
 module.exports = {
     entry: {
-        App: './src/App.js'
+        index: './src/index.js'
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: './src/index.html',
-            chunks: ['App']
+			template: './src/Login.html',
+			filename: 'login.html',
+            chunks: ['index']
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/Signup.html',
+			filename: 'signup.html',
+            chunks: ['index']
         })
     ],
    	devServer: {
