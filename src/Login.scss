@@ -1,6 +1,26 @@
+/* media queries*/
+@mixin for-phone-only {
+    @media (max-width: 599px){
+        @content;
+    }
+}
+@mixin for-tablet-portrait-up {
+    @media (min-width: 600px){
+        @content;
+    }
+}
+@mixin for-tablet-landscape-up {
+    @media (min-width: 900px){
+        @content;
+    }
+}
+@mixin for-desktop-up {
+    @media (min-width: 1200px){
+        @content;
+    }
+}
 
 .login-form {
-    width: 500px;
     margin: auto;
     margin-top: 150px;
     &__header {
@@ -18,16 +38,6 @@
     &__content {
         display: grid;
         padding-top: 50px;
-        grid-template-columns: 150px 330px;
-        grid-template-rows: auto;
-        grid-template-areas: 
-        "username-label username-input"
-        "password-label password-input"
-        ". sign-in"
-        ". sign-up"
-        ;
-        column-gap: 5px;
-        grid-row-gap: 20px;
     }
     &__username-label {
         grid-area: username-label;
@@ -49,23 +59,84 @@
     &__sign-up {
         grid-area: sign-up;
     }
-    &__submit-input {
-        margin-right: 30px;
-    }
     &__checkbox-input {
+        width: 20px;
         vertical-align: center;
-        margin-right: 15px;
     }
     &__sign-up-link {
-       font-size: 0.7rem; 
-       margin-right: 90px;
+       font-size: 0.9rem; 
     }
     &__forgot-password-link {
-       font-size: 0.7rem; 
+       font-size: 0.9rem; 
     }
     &__icon {
         color: var(--icon-color);
         margin-right: 21px;
     }
 
+    /*media quries mixins*/
+    @include for-phone-only {
+        width: 90%;
+        &__content {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: auto;
+            grid-template-areas: 
+            "username-label"
+            "username-input"
+            "password-label"
+            "password-input"
+            "sign-in"
+            "sign-up"
+            ;
+            column-gap: 5px;
+            grid-row-gap: 20px;
+        } 
+        &__submit-input {
+            margin-right: 20px;
+        }
+        &__sign-up-link {
+           margin-right: 30px;
+        }
+    }
+    @include for-tablet-portrait-up {
+        width: 400px;
+        &__content {
+            display: grid;
+            grid-template-columns: 120px 260px;
+            grid-template-rows: auto;
+            grid-template-areas: 
+            "username-label username-input"
+            "password-label password-input"
+            ". sign-in"
+            ". sign-up"
+            ;
+            column-gap: 5px;
+            grid-row-gap: 20px;
+        }
+        &__submit-input {
+            margin-right: 10px;
+        }
+        &__checkbox-input {
+            margin-right: 0px;
+        }
+        &__sign-up-link {
+           margin-right: 20px;
+        }
+    }
+    @include for-tablet-landscape-up {
+        width: 500px;
+        &__content {
+            grid-template-columns: 150px 330px;
+        }
+        &__submit-input {
+            margin-right: 30px;
+        }
+        &__checkbox-input {
+            margin-right: 15px;
+        }
+        &__sign-up-link {
+           margin-right: 90px;
+        }
+    }
 }

@@ -1,4 +1,26 @@
+/* media queries*/
+@mixin for-phone-only {
+    @media (max-width: 599px){
+        @content;
+    }
+}
+@mixin for-tablet-portrait-up {
+    @media (min-width: 600px){
+        @content;
+    }
+}
+@mixin for-tablet-landscape-up {
+    @media (min-width: 900px){
+        @content;
+    }
+}
+@mixin for-desktop-up {
+    @media (min-width: 1200px){
+        @content;
+    }
+}
 
+/*global variables */
 :root {
     --icon-color: #00bdd7;
     --text-color: #4b4b4b;
@@ -69,6 +91,11 @@ input[type="text"], input[type="password"] {
     background-color: var(--btn-background-color);
 }
 
+.btn--secondary {
+    background-color: transparent;
+    color: var(--text-color);
+}
+
 .logo {
     float: left;
 }
@@ -78,7 +105,6 @@ input[type="text"], input[type="password"] {
     background-color: transparent;
     color: var(--text-color);
     cursor: pointer;
-    margin-top: 43px;
 }
 
 .logout-btn:hover {
@@ -96,4 +122,36 @@ input[type="text"], input[type="password"] {
     bottom: 0px;
     margin-bottom: 10px;
     text-align: center;
+}
+
+/* media quiries mixins*/
+@include for-phone-only {
+    .container {
+        width: 90%;
+    }
+    html {
+        font-size: 15px;
+        line-height: 1.5rem;
+    }
+    .logout-btn {
+        margin-top: 20px;
+    }
+}
+@include for-tablet-portrait-up {
+    .container {
+        width: 550px;
+    }
+    .logout-btn {
+        margin-top: 40px;
+    }
+}
+@include for-tablet-landscape-up {
+    .container {
+        width: 850px;
+    }
+}
+@include for-desktop-up {
+    .container {
+        width: 1100px;
+    }
 }

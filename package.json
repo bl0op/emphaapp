@@ -5,7 +5,7 @@
   "main": "src/App.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack-dev-server --open"
+    "build": "webpack-dev-server --host 0.0.0.0 --open"
   },
   "author": "Yaroslav Kalinin",
   "license": "ISC",

@@ -1,4 +1,24 @@
-
+/* media queries*/
+@mixin for-phone-only {
+    @media (max-width: 599px){
+        @content;
+    }
+}
+@mixin for-tablet-portrait-up {
+    @media (min-width: 600px){
+        @content;
+    }
+}
+@mixin for-tablet-landscape-up {
+    @media (min-width: 900px){
+        @content;
+    }
+}
+@mixin for-desktop-up {
+    @media (min-width: 1200px){
+        @content;
+    }
+}
 
 .user-form {
     margin: auto;
@@ -9,30 +29,14 @@
     }
     &__name-label {
         color: var(--form-header-color);
-        margin: 18px 22px 18px 22px;
-        float: left;
     }
     &__id-label {
-        margin: 0;
-        margin-top: 20px;
-        margin-right: 18px;
-        float: right;
+        color: var(--text-color);
     }
     &__content {
         display: grid;
         padding-top: 50px;
-        grid-template-columns: 150px 200px 50px;
         grid-template-rows: auto;
-        grid-template-areas: 
-        "username-label username-input refresh-username-btn"
-        "password-label password-input resfresh-password-btn"
-        "firstname-label firstname-input resfresh-firstname-input"
-        "lastname-label lastname-input resfresh-lastname-input"
-        "last-login last-login last-login"
-        "submit-input . ."
-        ;
-        column-gap: 5px;
-        grid-row-gap: 20px;
     }
     &__username-label {
         grid-area: username-label;
@@ -41,7 +45,7 @@
         grid-area: username-input;
     }
     &__refresh-username-btn {
-        grid-area: refersh-username-btn;
+        grid-area: refresh-username-btn;
     }
     &__password-label {
         grid-area: password-label;
@@ -50,7 +54,7 @@
         grid-area: password-input;
     }
     &__refresh-password-btn {
-        grid-area: refersh-password-btn;
+        grid-area: refresh-password-btn;
     }
     &__firstname-label {
         grid-area: firstname-label;
@@ -59,7 +63,7 @@
         grid-area: firstname-input;
     }
     &__refresh-firstname-btn {
-        grid-area: refersh-firtsname-btn;
+        grid-area: refresh-firtsname-btn;
     }
     &__lastname-label {
         grid-area: lastname-label;
@@ -68,7 +72,7 @@
         grid-area: lastname-input;
     }
     &__refresh-lastname-btn {
-        grid-area: refersh-lastname-btn;
+        grid-area: refresh-lastname-btn;
     }
     &__last-login {
         grid-area: last-login;
@@ -82,4 +86,74 @@
         margin-right: 21px;
     }
 
+    /*media quries mixins*/
+    @include for-phone-only {
+        &__name-label {
+            margin-left: 0;
+            float: none;
+        }
+        &__id-label {
+            float: none;
+            margin-bottom: 10px;
+        }
+        &__content {
+            grid-template-columns: 80% 10%;
+            grid-template-areas: 
+            "username-label username-label"
+            "username-input refresh-user-btn"
+            "password-label password-label"
+            "password-input refresh-password-btn"
+            "firstname-label firstname-label"
+            "firstname-input resfresh-firstname-input"
+            "lastname-label lastname-label"
+            "lastname-input resfresh-lastname-input"
+            "last-login last-login"
+            "submit-input submit-intput"
+            ;
+            column-gap: 5%;
+            grid-row-gap: 20px;
+        } 
+        &__submit-input {
+            margin-right: 20px;
+        }
+        &__sign-in-link {
+           margin-right: 30px;
+        }
+    }
+    @include for-tablet-portrait-up {
+        &__name-label {
+            color: var(--form-header-color);
+            margin: 18px 22px 18px 22px;
+            float: left;
+        }
+        &__id-label {
+            margin: 0;
+            margin-top: 20px;
+            margin-right: 18px;
+            float: right;
+        }
+        &__content {
+            padding-top: 50px;
+            grid-template-columns: 120px 300px 50px;
+            grid-template-areas: 
+            "username-label username-input refresh-username-btn"
+            "password-label password-input resfresh-password-btn"
+            "firstname-label firstname-input resfresh-firstname-input"
+            "lastname-label lastname-input resfresh-lastname-input"
+            "last-login last-login last-login"
+            "submit-input . ."
+            ;
+            column-gap: 10px;
+            grid-row-gap: 20px;
+        }
+        &__submit-input {
+            margin-right: 10px;
+        }
+        &__checkbox-input {
+            margin-right: 0px;
+        }
+        &__sign-in-link {
+           margin-right: 20px;
+        }
+    }
 }
