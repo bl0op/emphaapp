@@ -1,0 +1,83 @@
+
+.sign-up-form {
+    width: 600px;
+    margin: auto;
+    margin-top: 150px;
+    &__header {
+        border-bottom: 2px solid var(--form-header-color);
+    }
+    &__form-label {
+        color: var(--form-header-color);
+        margin: 18px 22px 18px 22px;
+    }
+    &__app-label {
+        margin: 0;
+        margin-right: 18px;
+        float: right;
+    }
+    &__content {
+        display: grid;
+        padding-top: 50px;
+        grid-template-columns: 250px 330px;
+        grid-template-rows: auto;
+        grid-template-areas: 
+        "username-label username-input"
+        "password-label password-input"
+        "repeat-password-label repeat-password-input"
+        ". sign-up"
+        ;
+        column-gap: 5px;
+        grid-row-gap: 20px;
+    }
+    &__username-label {
+        grid-area: username-label;
+    }
+    &__username-input {
+        grid-area: username-input;
+    }
+    &__password-label {
+        grid-area: password-label;
+    }
+    &__password-input {
+        grid-area: password-input;
+    }
+    &__repeat-password-label {
+        grid-area: repeat-password-label;
+    }
+    &__repeat-password-input {
+        grid-area: repeat-password-input;
+    }
+    &__sign-up {
+        display: flex;
+        align-items: center;
+        grid-area: sign-up;
+    }
+    &__submit-input {
+        margin-right: 30px;
+    }
+    &__checkbox-input {
+        vertical-align: center;
+        margin-right: 15px;
+    }
+    &__sign-in-link {
+       font-size: 0.7rem; 
+       margin-left: auto;
+       margin-right: 90px;
+    }
+    &__forgot-password-link {
+       font-size: 0.7rem; 
+    }
+    &__icon {
+        color: var(--icon-color);
+        margin-right: 21px;
+    }
+
+}
+
+.footer {
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    margin-bottom: 10px;
+    text-align: center;
+}

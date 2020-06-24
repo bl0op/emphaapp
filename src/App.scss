@@ -1,0 +1,67 @@
+
+:root {
+    --icon-color: #00bdd7;
+    --text-color: #4b4b4b;
+    --btn-color: white;
+    --btn-background-color: #13bed3;
+    --form-header-color: #b0d3d7;
+    --link-color: #b0d3d7;
+}
+
+//Roboto, regular - 100, 300, 400, 500, 700, 900
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Roboto', sans-serif;
+    color: var(--text-color);
+    font-size: 24px;
+}
+
+body, html {
+    margin: 0;
+    min-height: 100%;
+}
+
+body {
+    position: relative;
+    min-height: 75vh;
+    padding-bottom: 20vh;
+}
+
+input[type="text"], input[type="password"] {
+    border: 0;
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+    color: var(--text-color);
+    outline: none;
+    background-color: transparent;
+    border-bottom: 2px solid var(--text-color);
+}
+
+.checkbox  {
+    background-color: transparent;
+    width: 30px;
+    height: 30px;
+    border: 2px solid var(--text-color);
+}
+
+.btn {
+    border: none;
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+    color: var(--text-color);
+    outline: none;
+    color: var(--btn-color);
+    font-weight: 500;
+    padding: 5px 20px 7px 20px;
+    border-radius: 10%/25%;
+    background-color: var(--btn-background-color);
+}
+
+.link {
+    color: var(--link-color);
+}
