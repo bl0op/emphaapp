@@ -15,6 +15,11 @@ module.exports = {
             template: './src/Signup.html',
 			filename: 'signup.html',
             chunks: ['index']
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/User.html',
+			filename: 'user.html',
+            chunks: ['index']
         })
     ],
    	devServer: {

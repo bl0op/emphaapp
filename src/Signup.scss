@@ -1,6 +1,6 @@
 
 .sign-up-form {
-    width: 600px;
+    width: 500px;
     margin: auto;
     margin-top: 150px;
     &__header {
@@ -18,7 +18,7 @@
     &__content {
         display: grid;
         padding-top: 50px;
-        grid-template-columns: 250px 330px;
+        grid-template-columns: 200px 300px;
         grid-template-rows: auto;
         grid-template-areas: 
         "username-label username-input"
@@ -54,6 +54,7 @@
     }
     &__submit-input {
         margin-right: 30px;
+        cursor: pointer;
     }
     &__checkbox-input {
         vertical-align: center;
@@ -72,12 +73,4 @@
         margin-right: 21px;
     }
 
-}
-
-.footer {
-    width: 100%;
-    position: absolute;
-    bottom: 0px;
-    margin-bottom: 10px;
-    text-align: center;
 }

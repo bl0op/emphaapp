@@ -1,6 +1,6 @@
 
 .login-form {
-    width: 600px;
+    width: 500px;
     margin: auto;
     margin-top: 150px;
     &__header {
@@ -18,7 +18,7 @@
     &__content {
         display: grid;
         padding-top: 50px;
-        grid-template-columns: 190px 390px;
+        grid-template-columns: 150px 330px;
         grid-template-rows: auto;
         grid-template-areas: 
         "username-label username-input"
@@ -68,12 +68,4 @@
         margin-right: 21px;
     }
 
-}
-
-.footer {
-    width: 100%;
-    position: absolute;
-    bottom: 0px;
-    margin-bottom: 10px;
-    text-align: center;
 }

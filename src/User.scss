@@ -1,0 +1,85 @@
+
+
+.user-form {
+    margin: auto;
+    margin-top: 70px;
+    &__header {
+        border-bottom: 2px solid var(--form-header-color);
+        overflow: hidden;
+    }
+    &__name-label {
+        color: var(--form-header-color);
+        margin: 18px 22px 18px 22px;
+        float: left;
+    }
+    &__id-label {
+        margin: 0;
+        margin-top: 20px;
+        margin-right: 18px;
+        float: right;
+    }
+    &__content {
+        display: grid;
+        padding-top: 50px;
+        grid-template-columns: 150px 200px 50px;
+        grid-template-rows: auto;
+        grid-template-areas: 
+        "username-label username-input refresh-username-btn"
+        "password-label password-input resfresh-password-btn"
+        "firstname-label firstname-input resfresh-firstname-input"
+        "lastname-label lastname-input resfresh-lastname-input"
+        "last-login last-login last-login"
+        "submit-input . ."
+        ;
+        column-gap: 5px;
+        grid-row-gap: 20px;
+    }
+    &__username-label {
+        grid-area: username-label;
+    }
+    &__username-input {
+        grid-area: username-input;
+    }
+    &__refresh-username-btn {
+        grid-area: refersh-username-btn;
+    }
+    &__password-label {
+        grid-area: password-label;
+    }
+    &__password-input {
+        grid-area: password-input;
+    }
+    &__refresh-password-btn {
+        grid-area: refersh-password-btn;
+    }
+    &__firstname-label {
+        grid-area: firstname-label;
+    }
+    &__firstname-input {
+        grid-area: firstname-input;
+    }
+    &__refresh-firstname-btn {
+        grid-area: refersh-firtsname-btn;
+    }
+    &__lastname-label {
+        grid-area: lastname-label;
+    }
+    &__lastname-input {
+        grid-area: lastname-input;
+    }
+    &__refresh-lastname-btn {
+        grid-area: refersh-lastname-btn;
+    }
+    &__last-login {
+        grid-area: last-login;
+    }
+    &__submit-input {
+        grid-area: submit-input;
+        width: 100px;
+    }
+    &__icon {
+        color: var(--icon-color);
+        margin-right: 21px;
+    }
+
+}
