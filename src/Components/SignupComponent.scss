@@ -88,7 +88,7 @@
         margin-right: 21px;
     }
 
-    /*media quries mixins*/
+    /*media queries mixins*/
     @include for-phone-only {
         width: 90%;
         &__content {

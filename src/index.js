@@ -1,5 +1,9 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './Components/App';
+
 import 'font-awesome/css/font-awesome.css';
-import './App.scss';
-import './Login.scss';
-import './Signup.scss';
-import './User.scss';
+import './index.scss';
+
+
+ReactDOM.render(<App/>, document.getElementById('root'));

@@ -7,20 +7,10 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-			template: './src/Login.html',
-			filename: 'login.html',
+			template: './src/index.html',
+			filename: 'index.html',
             chunks: ['index']
         }),
-        new HtmlWebpackPlugin({
-            template: './src/Signup.html',
-			filename: 'signup.html',
-            chunks: ['index']
-        }),
-        new HtmlWebpackPlugin({
-            template: './src/User.html',
-			filename: 'user.html',
-            chunks: ['index']
-        })
     ],
    	devServer: {
 		contentBase: './dist/',

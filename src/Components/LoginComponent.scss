@@ -66,15 +66,12 @@
     &__sign-up-link {
        font-size: 0.9rem; 
     }
-    &__forgot-password-link {
-       font-size: 0.9rem; 
-    }
     &__icon {
         color: var(--icon-color);
         margin-right: 21px;
     }
 
-    /*media quries mixins*/
+    /*media queries mixins*/
     @include for-phone-only {
         width: 90%;
         &__content {
