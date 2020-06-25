@@ -63,8 +63,9 @@
         width: 20px;
         vertical-align: center;
     }
-    &__sign-up-link {
-       font-size: 0.9rem; 
+    &__error {
+        grid-area: error;
+        color: var(--error-color);
     }
     &__icon {
         color: var(--icon-color);
@@ -84,16 +85,13 @@
             "password-label"
             "password-input"
             "sign-in"
-            "sign-up"
+            "error"
             ;
             column-gap: 5px;
             grid-row-gap: 20px;
         } 
         &__submit-input {
             margin-right: 20px;
-        }
-        &__sign-up-link {
-           margin-right: 30px;
         }
     }
     @include for-tablet-portrait-up {
@@ -106,7 +104,7 @@
             "username-label username-input"
             "password-label password-input"
             ". sign-in"
-            ". sign-up"
+            ". error"
             ;
             column-gap: 5px;
             grid-row-gap: 20px;
@@ -116,9 +114,6 @@
         }
         &__checkbox-input {
             margin-right: 0px;
-        }
-        &__sign-up-link {
-           margin-right: 20px;
         }
     }
     @include for-tablet-landscape-up {
@@ -131,9 +126,6 @@
         }
         &__checkbox-input {
             margin-right: 15px;
-        }
-        &__sign-up-link {
-           margin-right: 90px;
         }
     }
 }

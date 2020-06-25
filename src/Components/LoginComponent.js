@@ -1,41 +1,37 @@
 import React, {useState} from 'react';
-import {Link, Redirect} from 'react-router-dom';
+import {Redirect} from 'react-router-dom';
+import {connect} from 'react-redux';
+import {login} from '../redux/ActionCreators.js';
 import './LoginComponent.scss';
-import { useAuth } from './context/auth';
 
+
+const mapStateToProps = (state) => {
+    return {
+        auth: state.auth
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        login : (username, password, rememberMe) => dispatch(login(username, password, rememberMe))
+    }
+}
 
 function Login(props){
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [rememberMe, setRememberMe] = useState(false);
     //move to store
-    const [isLoggenIn, setLoggedIn] = useState(false);
-    const { setAuthToken } = useAuth();
+    const [isLoggedIn, setLoggedIn] = useState(false);
 
     function postLogin(e) {
         e.preventDefault();
-        fetch('http://emphasoft-test-assignment.herokuapp.com/api-token-auth/', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: `{"username": "${username}", "password": "${password}"}`
-        })
-        .then((res) => {
-            return res.json();
-        })
-        .then((res) => {
-            setAuthToken(res.token);
-            setLoggedIn(true);
-        })
-        .catch((err) => {
-            console.log(err);
-        })
-        ;
+        props.login(username, password, rememberMe);
     }
 
-    if(isLoggenIn) {
-        <Redirect to='/'/>
+    if(props.auth.token) {
+        return <Redirect to='/'/>
     }
 
 
@@ -74,20 +70,26 @@ function Login(props){
                     {/*Submit input*/}
                     <input type='submit'
                      className='login-form__submit-input btn'
-                     value='Sign in'
+                     value={props.auth.isLogginIn ? 'Loading...' : 'Sign in'}
                      onClick={(e) => postLogin(e)}
                     />
-                    <input type='checkbox' name='remember-me' className='login-form__checkbox-input checkbox'/>
+                    {/*Remember me checkbox*/}
+                    <input
+                     type='checkbox'
+                     name='remember-me'
+                     className='login-form__checkbox-input checkbox'
+                     value={rememberMe}
+                     onClick={(e) => {setRememberMe(e.target.checked);}}
+                    />
                     <label htmlFor='password' htmlFor='remember-me' className='login-form__checkbox-label'>
                          Remember me
                     </label>
                 </div>
-                <div className='login-form__sign-up'>
-                    <Link to='/signup' className='login-form__sign-up-link link'>sign up</Link>
-                </div>
+
+                <p className='login-form__error'>{props.auth.error}</p>
             </div>
         </form>
     );
 }
 
-export default Login;
+export default connect(mapStateToProps, mapDispatchToProps)(Login);
