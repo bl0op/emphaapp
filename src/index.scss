@@ -29,6 +29,11 @@
     --form-header-color: #b0d3d7;
     --link-color: #b0d3d7;
     --error-color: #cc0000;
+    --hover-color: #989898;
+}
+
+#root {
+    min-height: 70vh;
 }
 
 //Roboto, regular - 100, 300, 400, 500, 700, 900
@@ -44,6 +49,10 @@ html {
     font-size: 18px;
 }
 
+h1 {
+    margin: 0px;
+}
+
 body, html {
     margin: 0;
     min-height: 100%;
@@ -55,7 +64,7 @@ body {
     padding-bottom: 20vh;
 }
 
-input[type="text"], input[type="password"] {
+input[type="text"], input[type="password"], input[type="search"] {
     border: 0;
     font-size: 1rem;
     font-family: 'Roboto', sans-serif;
@@ -76,6 +85,10 @@ input[type="text"], input[type="password"] {
     width: 30px;
     height: 30px;
     border: 2px solid var(--text-color);
+}
+
+.search {
+    margin-right: 10px;
 }
 
 .btn {
@@ -101,6 +114,10 @@ input[type="text"], input[type="password"] {
     float: left;
 }
 
+.error {
+    color:var(--error-color);
+}
+
 .logout-btn {
     float: right;
     background-color: transparent;
@@ -115,6 +132,11 @@ input[type="text"], input[type="password"] {
 
 .link {
     color: var(--link-color);
+}
+
+.icon {
+    color: var(--icon-color);
+    margin-right: 21px;
 }
 
 footer {

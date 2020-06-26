@@ -22,15 +22,13 @@ function Login(props){
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [rememberMe, setRememberMe] = useState(false);
-    //move to store
-    const [isLoggedIn, setLoggedIn] = useState(false);
 
     function postLogin(e) {
         e.preventDefault();
         props.login(username, password, rememberMe);
     }
 
-    if(props.auth.token) {
+    if(sessionStorage.getItem('token')) {
         return <Redirect to='/'/>
     }
 

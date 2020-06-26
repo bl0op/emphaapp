@@ -5,7 +5,7 @@ import {BrowserRouter as Router,
 
 import PrivateRoute from './PrivateRoute';
 
-import Profile from './ProfileComponent';
+import Users from './UsersComponent';
 import Login from './LoginComponent';
 
 import {Provider} from 'react-redux';
@@ -14,18 +14,16 @@ import {authSetToken} from '../redux/ActionCreators';
 
 function App() {
 
-    /* fits token to redux-store, if in localStorage */
-    let token = localStorage.getItem('token');
-    if(token){
-        //store.dispatch(authSetToken(token));
-        store.dispatch(authSetToken(null));
-    }
 
+    let localToken = localStorage.getItem('token');
+    if(localToken){
+        sessionStorage.setItem('token', localToken); 
+    }
     return (
         <Provider store={store}>
             <Suspense fallback={<div>Loading...</div>}>
                 <Router>
-                    <PrivateRoute exact path='/' component={Profile}/>
+                    <PrivateRoute exact path='/' component={Users}/>
                     <Route path='/login' component={Login}/>
                 </Router>
             </Suspense>
