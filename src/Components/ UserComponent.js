@@ -9,7 +9,7 @@ function User(props){
             <div  onClick={() =>  props.onClick(user.id)} className='user__collapsible'>
                 <div>
                     <span className={props.isCollapsed!==-1 ? 'icon fa fa-caret-down' : 'icon fa fa-caret-right'}></span>
-                    <span className="user__inactive"></span>
+                    <span className={user.is_active ? "user__active" : "user__inactive"}></span>
                 </div>
                 <h3>{user.username}</h3>
                 <h3>ID {user.id}</h3>
