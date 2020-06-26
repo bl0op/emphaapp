@@ -1,0 +1,1 @@
+export const baseUrl = 'http://emphasoft-test-assignment.herokuapp.com';
