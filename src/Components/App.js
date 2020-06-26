@@ -1,5 +1,6 @@
 import React, {Suspense} from 'react';
 import {BrowserRouter as Router,
+        Switch,
         Route
 } from 'react-router-dom';
 
@@ -23,8 +24,10 @@ function App() {
         <Provider store={store}>
             <Suspense fallback={<div>Loading...</div>}>
                 <Router>
+                    <Switch>
+                    <Route exact path='/login' component={Login}/>
                     <PrivateRoute exact path='/' component={Users}/>
-                    <Route path='/login' component={Login}/>
+                    </Switch>
                 </Router>
             </Suspense>
         </Provider>
